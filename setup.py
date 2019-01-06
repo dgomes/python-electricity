@@ -8,22 +8,29 @@
 
 import codecs
 import re
+import io
+import os
 try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
 
 
-with codecs.open('tariffs.py', 'r', 'utf-8') as fd:
+with codecs.open('electricity/tariffs.py', 'r', 'utf-8') as fd:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         fd.read(), re.MULTILINE).group(1)
 
 if not version:
     raise RuntimeError('Cannot find version information')
 
+try:
+    with io.open(os.path.join(".", 'README.md'), encoding='utf-8') as f:
+        long_description = '\n' + f.read()
+except FileNotFoundError:
+    raise RuntimeError('Cannot find README.md')
 
 setup(
-    name='electricity',
+    name='python-electricity',
     version=version,
     author='dgomes',
     author_email='diogogomes@gmail.com',
@@ -34,7 +41,8 @@ setup(
     license='MIT',
     py_modules=['electricity'],
     description='Determine Electricity Tariff Periods in Python',
-    long_description=codecs.open('README.rst', encoding='utf-8').read(),
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     install_requires=['python-dateutil', 'six'],
     platforms='any',
     classifiers=[
