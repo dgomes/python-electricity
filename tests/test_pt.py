@@ -1,15 +1,14 @@
 import pytest
 from datetime import datetime
-from electricity.tariffs import EDP, Galp, COUNTRIES
+from electricity.tariffs import EDP, Galp, Operators 
 
 
 def test_tariffs_edp():
-    edp = EDP()
-    assert "Cheias" in edp.tariffs()
-    assert "Vazio" in edp.tariffs()
+    edp = EDP(plan="Bi-horário - ciclo diário")
+    assert "Cheias" in edp.available_tariffs()
+    assert "Vazio" in edp.available_tariffs()
 
-    galp = Galp()
-    assert "Tri-horário - ciclo semanal" not in galp.tariff_periods()
+    assert "Tri-horário - ciclo semanal" not in Galp.tariff_periods()
 
     weekday_summer = datetime(2019, 7, 8, 9, 30)
     assert edp.tri_horario_diario(weekday_summer) == "Cheias"
