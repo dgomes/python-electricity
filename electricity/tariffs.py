@@ -1,7 +1,7 @@
 """
 Map a given datetime to a tariff
 """
-__version__ = "0.0.1"
+__version__ = "0.0.3"
 __author__ = "Diogo Gomes"
 __email__ = "diogogomes@gmail.com"
 

@@ -11,7 +11,7 @@ import re
 import io
 import os
 try:
-    from setuptools import setup
+    from setuptools import setup, find_packages
 except ImportError:
     from distutils.core import setup
 
@@ -32,6 +32,7 @@ except FileNotFoundError:
 setup(
     name='python-electricity',
     version=version,
+    packages=find_packages(),
     author='dgomes',
     author_email='diogogomes@gmail.com',
     maintainer='dgomes',
@@ -43,7 +44,6 @@ setup(
     description='Determine Electricity Tariff Periods in Python',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    install_requires=['python-dateutil', 'six'],
     platforms='any',
     classifiers=[
         'Development Status :: 4 - Beta',
@@ -51,10 +51,6 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: Implementation :: CPython',
