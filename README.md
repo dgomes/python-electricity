@@ -5,7 +5,15 @@ Tariff Periods for electricity billing
 
 * Portugal
   * EDP
+    * Simples
+    * Bi-horário - ciclo diário
+    * Bi-horário - ciclo semanal
+    * Tri-horário - ciclo diário
+    * Tri-horário - ciclo semanal
   * Galp
+    * Simples
+    * Bi-horário - ciclo diário
+    * Bi-horário - ciclo semanal
 
 ## Status
 
