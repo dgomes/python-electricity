@@ -298,5 +298,34 @@ class Galp(ERSE):
         "Bi-horário - ciclo semanal": (bi_horario_semanal, [VAZIO, FORA_VAZIO]),
     }
 
+class Iberdrola(ERSE):
+    VAZIO = "Vazio"
+    FORA_VAZIO = "Fora de Vazio"
+    _tariffs = [VAZIO, FORA_VAZIO]
+    
+    def __init__(self, country=PT, operator_name="Iberdrola", plan=None):
+        if plan not in self._tariff_periods:
+            raise PlanNotAvailableException()
+        super().__init__(country, operator_name, plan)
 
-Operators = {PT: {"EDP": EDP, "Galp": Galp}}
+    def simples(self):
+        return self.NORMAL
+
+    def bi_horario_diario(self, time):
+        if ERSE.ciclo_diario_continente(time) in [ERSE.VAZIO_NORMAL, ERSE.SUPER_VAZIO]:
+            return self.VAZIO
+        return self.FORA_VAZIO
+
+    def bi_horario_semanal(self, time):
+        if ERSE.ciclo_semanal_continente(time) in [ERSE.VAZIO_NORMAL, ERSE.SUPER_VAZIO]:
+            return self.VAZIO
+        return self.FORA_VAZIO
+
+    _tariff_periods = {
+        "Casa": (simples, ERSE.NORMAL),
+        "Casa Noite - ciclo diário": (bi_horario_diario, [VAZIO, FORA_VAZIO]),
+        "Casa Noite - ciclo semanal": (bi_horario_semanal, [VAZIO, FORA_VAZIO]),
+    }
+
+
+Operators = {PT: {"EDP": EDP, "Galp": Galp, "Iberdrola": Iberdrola}}
