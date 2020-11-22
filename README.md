@@ -14,10 +14,14 @@ Tariff Periods for electricity billing
     * Simples
     * Bi-horário - ciclo diário
     * Bi-horário - ciclo semanal
+  * Iberdrola
+    * Casa
+    * Casa Noite - ciclo diário
+    * Casa Noite - ciclo semanal
 
 ## Status
 
-Currently only Portuguese operators EDP and Galp are available with all the ERSE plans.
+Currently only Portuguese operators EDP, Galp and Iberdrola are available.
 
 ## Pull Requests
 
