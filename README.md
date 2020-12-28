@@ -23,11 +23,9 @@ Tariff Periods for electricity billing
     
 #### Available Tariffs
   * Normal
-  
   * Ponta
   * Cheias
   * Vazio
-  
   * Vazio Normal
   * Super Vazio
   
