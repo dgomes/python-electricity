@@ -351,9 +351,9 @@ class GoldEnergy(ERSE):
         return self.FORA_VAZIO
 
     _tariff_periods = {
-        "Casa": (simples, ERSE.NORMAL),
-        "Casa Noite - ciclo diário": (bi_horario_diario, [VAZIO, FORA_VAZIO]),
-        "Casa Noite - ciclo semanal": (bi_horario_semanal, [VAZIO, FORA_VAZIO]),
+        "Simples": (simples, ERSE.NORMAL),
+        "Bi-horário - ciclo diário": (bi_horario_diario, [VAZIO, FORA_VAZIO]),
+        "Bi-horário - ciclo semanal": (bi_horario_semanal, [VAZIO, FORA_VAZIO]),
     }
 
 
