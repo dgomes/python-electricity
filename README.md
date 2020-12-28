@@ -20,7 +20,11 @@ Tariff Periods for electricity billing
     * Casa
     * Casa Noite - ciclo diário
     * Casa Noite - ciclo semanal
-    
+  * GoldEnergy
+    * Simples
+    * Bi-horário - ciclo diário
+    * Bi-horário - ciclo semanal
+      
 #### Available Tariffs
   * Normal
   * Ponta
@@ -31,7 +35,7 @@ Tariff Periods for electricity billing
   
 ## Status
 
-Currently only Portuguese operators EDP, Galp and Iberdrola are available.
+Currently only Portuguese operators EDP, Galp, Iberdrola and GoldEnergy are available.
 
 ## Pull Requests
 
