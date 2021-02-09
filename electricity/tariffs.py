@@ -233,7 +233,7 @@ class EDP(ERSE):
             raise PlanNotAvailableException()
         super().__init__(country, operator_name, plan)
 
-    def simples(self):
+    def simples(self, time=None):
         return self.NORMAL
 
     def bi_horario_diario(self, time):
@@ -279,7 +279,7 @@ class Galp(ERSE):
             raise PlanNotAvailableException()
         super().__init__(country, operator_name, plan)
 
-    def simples(self):
+    def simples(self, time=None):
         return self.NORMAL
 
     def bi_horario_diario(self, time):
@@ -308,7 +308,7 @@ class Iberdrola(ERSE):
             raise PlanNotAvailableException()
         super().__init__(country, operator_name, plan)
 
-    def simples(self):
+    def simples(self, time=None):
         return self.NORMAL
 
     def bi_horario_diario(self, time):
@@ -337,7 +337,7 @@ class GoldEnergy(ERSE):
             raise PlanNotAvailableException()
         super().__init__(country, operator_name, plan)
 
-    def simples(self):
+    def simples(self, time=None):
         return self.NORMAL
 
     def bi_horario_diario(self, time):
